@@ -1,0 +1,112 @@
+﻿*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.grid {
+    font-size: 0;
+    text-align: justify;
+}
+
+.grid > * {
+    display: inline-block;
+    font-size: medium;
+    text-align: left;
+}
+
+.grid:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+.content-grid {
+    max-width: 1024px;
+    margin: 7rem auto 0;
+}
+
+.content-grid > * {
+    vertical-align: top;
+}
+
+.content-grid .left-column {
+    width:25%;
+    border: 1px solid red;
+    position: relative;
+}
+
+.logo {
+    background-image: url(https://www.theironyard.com/assets/iron-yard-logo-709fbbf7ff0d1d76e83b9a782b79e7c4edb840974a7b3d9dd4f33b8cf5b87571.svg);
+    background-size: 100%;
+    background-color: #233139;
+    background-position: center center;
+    position: absolute;
+    display: block;
+    width: 55%;
+    top: -12rem;
+    border-radius: -27%;
+    border: 6px white solid;
+}
+
+.logo:after {
+    content: "";
+    display: inline-block;
+    padding-top: 100%;
+}
+
+.follow {
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    padding: 1.5rem;
+    background-color: #aaa;
+    color: white;
+}
+
+.content-grid .right-column {
+    width:75%;
+    border: 1px solid blue;
+    padding-left: 1em;
+
+}
+
+.header-image {
+    background-image: url(http://i.imgur.com/50iNiYl.jpg);
+    height: 30vw;
+    min-height: 150px;
+    background-position: center bottom;
+    background-size: cover;
+}
+
+a[to="pdf"], .pdf, a[class="pdf"], a[to*="f"] {
+    background-color: purple;
+    color:white;
+}
+
+.test-general-sibling ~ * {
+    background-color: deeppink;
+    color:white;
+    padding:1rem;
+}
+
+.annotated {
+    counter-reset: annotate;
+    transition: all .5s ease;
+}
+.annotated h3 {
+    counter-increment: annotate;
+    counter-reset: annotate1;
+}
+.annotated h3:before {
+    content: counter(annotate) ". ";
+}
+.annotated h4 {
+    counter-increment: annotate1;
+}
+.annotated h4:before {
+    content: counter(annotate) "." counter(annotate1) ". ";
+}
+
+.annotated:hover {
+    color: white;
+    background-color: red;
+}
